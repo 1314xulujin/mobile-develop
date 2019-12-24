@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a{
+            display: block;
+            width: 200px;
+            height: 200px;
+            background: red;
+            color: #fff;
+            font-size: 30px;
+            margin: 50px auto;
+        }
+        #mask{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body>
+<a href="http://www.baidu.com">去百度</a>
+<div id="mask">
+    假设这个是一个可以关闭的广告弹窗!
+</div>
+<script>
+    /*点透现象:
+    *    在两个非父子层级的重叠元素, 如果上面的元素是触摸事件, 并且触摸后隐藏 ,触摸之后上面的层隐藏后,会把触摸中默认的点击事件传递给下面的那个层,这个现象就是"点透现象"
+    * */
+    var mask =document.querySelector("#mask");
+
+    mask.addEventListener("touchstart",(e)=>{
+        e.preventDefault(); //阻止触发默认的点击事件  = > 解决点透现象问题
+        mask.style.display = "none";
+    })
+</script>
+</body>
+</html>

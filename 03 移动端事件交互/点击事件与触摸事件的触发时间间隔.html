@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 点击事件 可以与触摸事件同时触发, 但是点击事件会大概延迟100ms左右
+    document.addEventListener("touchstart",()=>{
+        console.log("这是一个触摸事件",new Date().getTime());
+    })
+
+    document.addEventListener("click",()=>{
+        console.log("这是一个点击事件",new Date().getTime());
+    })
+</script>
+</body>
+</html>

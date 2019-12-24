@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            width: 100%;
+            overflow: hidden;
+        }
+        #message-list{
+            line-height:44px;
+        }
+        #message-list li{
+            position: relative;
+            border-bottom:1px solid #ccc;
+            padding: 0 10px;
+            color: #666;
+            /*transition: all 0.35s;*/
+            /*transform: translateX(-150px);*/
+        }
+        .message-option{
+            position: absolute;
+            height: 44px;
+            top: 0;
+            left: 100%;
+            width: 75px;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+        .message-option span{
+            position: absolute;
+            height: 44px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .message-option span.message-read{
+            left:0;
+            background: #2aabd2;
+            width: 100px;
+        }
+        .message-option span.message-delete{
+            right:0;
+            background: red;
+            width:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="message-list">
+            <li>
+                <div class="message">这是第1条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第2条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第3条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第4条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第5条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第6条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第7条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第8条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第9条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第10条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第11条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第12条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第13条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第14条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第15条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+            <li>
+                <div class="message">这是第16条消息</div>
+                <div class="message-option">
+                    <span class="message-read">标记为已读</span>
+                    <span class="message-delete">删除</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var messageList = document.getElementById("message-list");
+
+        var sx,ex,x;
+        var isSwipe = false;
+        //监听事件 - touchstart
+        messageList.addEventListener("touchstart",function (e) {
+            var ele = e.target;//获取触发触摸事件的元素
+            if(ele.className ==  'message'){
+                 //获取当前手指触摸的开始坐标
+                sx = e.changedTouches[0].clientX;
+                // console.log(sx)
+            }
+        })
+
+        //监听事件 - touchmove
+        messageList.addEventListener("touchmove",function (e) {
+            var ele = e.target;//获取触发触摸事件的元素
+            if(ele.className ==  'message'){
+                //获取当前手指触摸的开始坐标
+                ex = e.changedTouches[0].clientX;
+                // console.log(ex)
+                x = ex - sx;
+                if(x < 0){
+                     isSwipe = true;
+                     if(ele.parentNode.className=="open"){
+                         x = x<-150?-150:x;
+                         ele.parentNode.style.cssText="transform:translateX("+((x/8)-150)+"px)";
+                     }else{
+                         // console.log("消息列表需要往左移动",x);
+                         //限制x移动的距离最大为150px
+                         x = x<-150?-150:x;
+                         ele.parentNode.style.cssText="transform:translateX("+(x)+"px)";
+                         //让删除标记容器宽度改变
+                         var x1 = Math.abs(x)<75?75:Math.abs(x);
+                         ele.nextElementSibling.style.cssText = "width:"+x1+"px;";
+                     }
+                }else{
+                    if(ele.parentNode.className=="open"){
+                        x = x<=150?x:150;
+                        ele.parentNode.style.cssText="transform:translateX("+(x-150)+"px)";
+                        var x1 = x>=75?75:x;
+                        ele.nextElementSibling.style.width = (150-x1)+'px';
+                    }
+                }
+            }
+        })
+
+        //监听事件 - touchend
+        messageList.addEventListener("touchend",function (e) {
+            var ele = e.target;//获取触发触摸事件的元素
+            console.log(x);
+            if(ele.className == 'message' && isSwipe){
+                isSwipe = false;
+                //判断滑出的距离是否 > 75
+                if(Math.abs(x)<75){
+                    console.log(ele.parentNode)
+                    ele.parentNode.style.cssText="transform:translateX(0);transition:all 0.35s";
+                }else{
+                    //标记删除的容器也需要设置宽度
+                    ele.nextElementSibling.style.cssText="width:150px;";
+                    ele.parentNode.style.cssText="transform:translateX(-150px);transition:all 0.35s";
+                   //把其他的具有open类的兄弟的open删除 , 清除样式
+                    var hasOpenLi = document.querySelector(".open");
+                    if(hasOpenLi){
+                        hasOpenLi.style.cssText="transform:translateX(0);transition:all 0.35s";
+                        hasOpenLi.lastElementChild.style.cssText="width:75px;";
+                        hasOpenLi.className="";
+                    }
+                    ele.parentNode.className="open";
+                }
+            }
+            else if(ele.parentNode.className=="open" && x>0){
+                ele.parentNode.style.cssText="transform:translateX(0);transition:all 0.35s";
+                ele.parentNode.className="";
+                ele.nextElementSibling.style.cssText="width:75px;";
+            }
+        })
+    </script>
+</body>
+</html>

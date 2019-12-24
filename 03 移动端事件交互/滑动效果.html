@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 滑动效果, 就是根据触摸开始和触摸结束的坐标而定
+    /*
+    * touches:   //当前屏幕上所有手指的列表
+
+      targetTouches:    //当前dom元素上手指的列表，尽量使用这个代替touches
+
+      changedTouches:   //涉及当前事件的手指的列表，尽量使用这个代替touches
+    * */
+    var sx,sy,ex,ey; //开始和结束时的坐标
+    document.addEventListener("touchstart",(e)=>{
+        // console.log(e.changedTouches[0]);
+        var touch = e.changedTouches[0];
+        sx = touch.clientX;
+        sy = touch.clientY;
+    })
+
+    document.addEventListener("touchend",(e)=>{
+        var touch = e.changedTouches[0];
+        ex = touch.clientX;
+        ey = touch.clientY;
+        var x = Math.abs(ex-sx);
+        var y = Math.abs(ey-sy);
+        if(x >=50 || y>=50){
+            // console.log("滑动事件....");
+            if(ex-sx<-50 && x > y){
+                console.log("向左滑动....");
+            }else if(ex-sx>50 && x > y){
+                console.log("向右滑动....");
+            }else if(ey - sy<-50){
+                console.log("向上滑动....");
+            }else if(ey-sy>50){
+                console.log("向下滑动....");
+            }
+        }else{
+            console.log("触摸事件...");
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" media="print" href="css/print.css">
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="css/phone.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="css/pc.css">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: #ccc;
+        }
+
+        /*设备宽度 768px 像素以下 = > 手机*/
+        @media (max-width: 768px) {
+            .box{
+                background-color: purple;
+                border-radius: 50%;
+            }
+        }
+
+        /*媒体查询 768 - 992 px 之间 => 平板*/
+        @media (min-width: 768px) and (max-width: 991px) {
+            .box{
+                background:none ;
+                width: 0;
+                height: 0;
+                border-width: 50px;
+                border-style: solid;
+                border-color: transparent;
+                border-left-color: #2aabd2;
+            }
+        }
+        /*设备宽度 992px - 1200px => 小型工作站pc*/
+        @media (min-width: 992px) {
+            .box{
+                background-color: red;
+            }
+        }
+        /*设备宽度1200px 以上 = > pc */
+        @media (min-width: 1200px) {
+            .box{
+                background-color: yellow;
+            }
+        }
+
+        /*在打印预览模式下*/
+        @media print {
+            .box{
+                /*display: none;*/
+                background-color: pink;
+            }
+        }
+
+        @media all {
+
+        }
+        /**
+            在媒体查询中可以根据
+                1.设备类型:
+                    screen 彩色屏幕
+                    print 打印模式
+                    all 所有设备
+
+                2.屏幕参数:
+                    •	min-width : 当浏览器宽度大于查询中定义的值时适用的规则。
+                    •	max-width : 当浏览器宽度小于查询中定义的值时适用的规则。
+                    •	min-height : 当浏览器高度大于查询中定义的值时适用的规则。
+                    •	max-height : 当浏览器高度小于查询中定义的值时适用的规则。
+                    •	orientation=portrait : 高度大于或等于宽度的浏览器适用的规则，即手机竖屏时适用的规则。
+                    •	orientation=landscape : 宽度大于高度的浏览器适用的规则，即手机横屏时适用的规则。
+
+            操作符:
+                and()
+                only()
+                not()
+                逗号, 并集 相当于 "或"
+        */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

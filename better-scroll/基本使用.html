@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+        ul,li{
+            list-style: none;
+        }
+        #wrapper{
+            height: 100vh;
+            width: 120%;
+            /*overflow: hidden;*/
+        }
+        .input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 44px;
+            background: red;
+        }
+        .content{
+            width: 1500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <ul class="content">
+            <li>这是列表项1飒飒飒飒飒飒是</li>
+            <li>这是列表项2飒飒飒飒飒飒是</li>
+            <li>这是列表项3飒飒飒飒飒飒是</li>
+            <li>这是列表项4飒飒飒飒飒飒是</li>
+            <li>这是列表项5飒飒飒飒飒飒是</li>
+            <li>这是列表项6飒飒飒飒飒飒是</li>
+            <li>这是列表项7飒飒飒飒飒飒是</li>
+            <li>这是列表项8飒飒飒飒飒飒是</li>
+            <li>这是列表项9飒飒飒飒飒飒是</li>
+            <li>这是列表项10飒飒飒飒飒飒是</li>
+            <li>这是列表项11飒飒飒飒飒飒是</li>
+            <li>这是列表项12飒飒飒飒飒飒是</li>
+            <li>这是列表项13飒飒飒飒飒飒是</li>
+            <li>这是列表项14飒飒飒飒飒飒是</li>
+            <li>这是列表项15飒飒飒飒飒飒是</li>
+            <li>这是列表项16飒飒飒飒飒飒是</li>
+            <li>这是列表项17飒飒飒飒飒飒是</li>
+            <li>这是列表项18飒飒飒飒飒飒是</li>
+            <li>这是列表项19飒飒飒飒飒飒是</li>
+            <li>这是列表项20飒飒飒飒飒飒是</li>
+            <li>这是列表项21飒飒飒飒飒飒是</li>
+            <li>这是列表项22飒飒飒飒飒飒是</li>
+            <li>这是列表项23飒飒飒飒飒飒是</li>
+            <li>这是列表项24飒飒飒飒飒飒是</li>
+            <li>这是列表项25飒飒飒飒飒飒是</li>
+            <li>这是列表项26飒飒飒飒飒飒是</li>
+            <li>这是列表项27飒飒飒飒飒飒是</li>
+            <li>这是列表项28飒飒飒飒飒飒是</li>
+            <li>这是列表项29飒飒飒飒飒飒是</li>
+            <li>这是列表项30飒飒飒飒飒飒是</li>
+            <li>这是列表项31飒飒飒飒飒飒是</li>
+            <li>这是列表项32飒飒飒飒飒飒是</li>
+            <li>这是列表项33飒飒飒飒飒飒是</li>
+            <li>这是列表项34飒飒飒飒飒飒是</li>
+            <li>这是列表项35飒飒飒飒飒飒是</li>
+            <li>这是列表项36飒飒飒飒飒飒是</li>
+            <li>这是列表项37飒飒飒飒飒飒是</li>
+            <li>这是列表项38飒飒飒飒飒飒是</li>
+            <li>这是列表项39飒飒飒飒飒飒是</li>
+            <li>这是列表项40飒飒飒飒飒飒是</li>
+            <li>这是列表项41飒飒飒飒飒飒是</li>
+            <li>这是列表项42飒飒飒飒飒飒是</li>
+            <li>这是列表项43飒飒飒飒飒飒是</li>
+            <li>这是列表项44飒飒飒飒飒飒是</li>
+            <li>这是列表项45飒飒飒飒飒飒是</li>
+            <li>这是列表项46飒飒飒飒飒飒是</li>
+            <li>这是列表项47飒飒飒飒飒飒是</li>
+            <li>这是列表项48飒飒飒飒飒飒是</li>
+            <li>这是列表项49飒飒飒飒飒飒是</li>
+            <li>这是列表项50飒飒飒飒飒飒是</li>
+        </ul>
+        <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
+        <div class="input">
+            <input type="text">
+        </div>
+    </div>
+<script src="js/bscroll.min.js"></script>
+    <script>
+        var wrapper = document.getElementById("wrapper");
+        //实例化Bs
+         var scroll = new BScroll(wrapper,{
+             freeScroll:false,//开启自由滑动
+             scrollX:true, //开启横向滑动
+             scrollbar:false,//开启滚动条
+             bounce:true,//设置滑动回弹效果
+             pullDownRefresh:true,//触发下拉刷新
+             pullUpLoad:true,//触发上拉加载更多效果
+         })
+
+        scroll.on("pullingDown",()=>{
+            console.log('正在刷新...')
+        })
+
+        scroll.on("pullingUp",()=>{
+            console.log('正在加载更多..')
+        })
+    </script>
+</body>
+</html>

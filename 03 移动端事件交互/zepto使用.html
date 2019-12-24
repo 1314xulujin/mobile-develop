@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            position: relative;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮</button>
+    <div id="box"></div>
+<script src="zepto/src/zepto.js"></script>
+<script src="zepto/src/event.js"></script>
+    <script src="zepto/src/fx.js"></script>
+    <script src="zepto/src/touch.js"></script>
+    <script>
+        // $("button").click(function(){
+        //     $("#box").css("background","red");
+        //     $("#box").animate({
+        //         left:1000
+        //     },3000)
+        // })
+
+        // $("#box").on("tap",function () {
+        //     console.log("触摸开始...");
+        // })
+
+        $("#box").on("swipeRight",function (e) {
+            console.log("右滑动...",e);
+        })
+    </script>
+</body>
+</html>

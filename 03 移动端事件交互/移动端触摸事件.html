@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //touchstart 手机已经放在触摸屏上了
+    document.addEventListener("touchstart",()=>{
+        console.log("手指已经触摸上来了!!!",new Date().getTime());
+    })
+
+    //touchend 手机已经离开触摸屏上了
+    document.addEventListener("touchend",()=>{
+        console.log("手指已经离开触摸屏!!!",new Date().getTime());
+    })
+</script>
+</body>
+</html>

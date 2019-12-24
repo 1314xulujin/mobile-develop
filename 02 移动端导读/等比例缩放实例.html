@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" style="font-size: 100px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>等比例缩放实例</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box{
+            width: 1rem;
+            height: 1rem;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+
+        /***
+         *  使用防抖: 当持续触发事件时，一定时间段内没有再触发事件，
+         *  事件处理函数才会执行一次，如果设定的时间到来之前，
+         *  又一次触发了事件，就重新开始延时
+         * */
+
+        (function(){
+            var supportsOrientationChange = 'onorientationchange' in window ? 'orientationchange' : 'resize';
+            //防抖函数
+            function debounce(handler ,interval){
+                var timer = null;
+                handler(); //首次执行
+                return function(){
+                    if(timer!=null) clearTimeout(timer);
+                    timer = setTimeout(handler,interval)
+                }
+            }
+            //具体的处理函数
+            function handler(){
+                var clientW = window.innerWidth;//获取当前窗口的宽度
+                var fz = clientW / 375 * 100;
+                document.documentElement.style.fontSize=fz + "px";
+            }
+            //监听窗口的缩放事件
+            window.addEventListener(supportsOrientationChange,debounce(handler,300));
+        })()
+    </script>
+</body>
+</html>

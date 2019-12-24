@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+body{
+    min-width: 320px;
+    font-family: "微软雅黑","Microsoft YaHei";
+    background-color: #f2f2f2;
+}
+a{
+    text-decoration: none;
+}
+
+ul,li{
+    list-style: none;
+}
+header{
+    position: relative;
+    height: 3em;
+    line-height: 3em;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+header .back{
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    overflow: hidden;
+    color: transparent;
+    line-height: 999em;
+    background: url("../images/icon_back.png") no-repeat center / auto 45%;
+}
+
+header p{
+    font-size: 1.2em;
+    color: #0077ff;
+    text-indent: 2em;
+}
+
+.container{
+    background-color: #fff;
+}
+.con-top{
+    padding: 15px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.con-top .logo{
+    width: 70px;
+    height: 70px;
+    background: url("../images/logo01.png") no-repeat 0 0 / 70px 70px;
+}
+
+.con-top .title{
+    color: #666;
+    padding-left: 15px;
+    width: 48%;
+}
+
+.con-top .title p:nth-child(2){
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.con-top .install a{
+    display: block;
+    margin-top: 40px;
+    padding: 6px 12px;
+    border: #0077ff 1px solid;
+    font-size: 0.75em;
+    color: #0077ff;
+    text-decoration: underline;
+    border-radius: 5px;
+}
+
+.content{
+    width: 92%;
+    margin: 15px auto;
+    padding-bottom: 15px;
+    font-size: 0.82em;
+    color: #666;
+}
+
+.content .title{
+    font-size: 1.25em;
+    margin-bottom: 15px;
+}
+
+
+/*底部导航样式*/
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3em;
+    width: 100%;
+    min-width: 320px;
+    background: #fff;
+    border-top: 1px solid #ccc;
+}
+
+footer .nav{
+    width: 96%;
+    margin: 0 auto;
+}
+
+footer .nav li{
+    float: left;
+    width: 33.333%;
+    text-align: center;
+}
+
+footer .nav li a{
+    display: block;
+    height: 48px;
+    color: #999;
+    font-size: 0.75em;
+    padding-top: 30px;
+    background: url("../images/btn_01-1.png") no-repeat center 5px / auto 50%;
+}
+
+footer .nav li.app a{
+    background-image: url("../images/btn_01.png");
+}
+
+footer .nav li.on.app a{
+    background-image: url("../images/btn_01-1.png");
+}
+
+footer .nav li.gzh a{
+    background-image: url("../images/btn_02.png");
+}
+footer .nav li.urls a{
+    background-image: url("../images/btn_03.png");
+}

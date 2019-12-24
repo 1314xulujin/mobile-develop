@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // var sTime , eTime;//记录的开始触摸时间 ,结束触摸时间
+    //
+    // document.addEventListener("touchstart",()=>{
+    //     sTime = new Date().getTime();
+    // })
+    //
+    // document.addEventListener("touchend",()=>{
+    //     eTime = new Date().getTime();
+    //
+    //     //判断时间是否已经超过 750ms 如果超过是长按事件
+    //     if((eTime - sTime) >=750){
+    //         console.log("这是一个长按事件!");
+    //     }else{
+    //         console.log("触摸事件!!!!");
+    //     }
+    // })
+
+    var timer = null;//定时器
+    var sTime , eTime;//记录的开始触摸时间 ,结束触摸时间
+
+    document.addEventListener("touchstart",()=>{
+        sTime = new Date().getTime();
+        timer = setTimeout(()=>{
+            console.log("这是一个长按事件");
+        },750)
+    })
+
+    document.addEventListener("touchend",()=>{
+        clearTimeout(timer);
+        eTime = new Date().getTime();
+        if((eTime - sTime)<750){
+            console.log("这是触摸事件!");
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+* {
+  /*去除移动端触摸点击时高亮的蓝色背景*/
+  -webkit-tap-highlight-color: transparent;
+}
+#sn-layout {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-top: 52px;
+  padding-bottom: 54px;
+  height: 1500px;
+}
+#sn-layout .sn-serach {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 640px;
+  width: 100%;
+  background: #fabc09;
+  height: 52px;
+}
+#sn-layout .sn-serach .search-box {
+  overflow: hidden;
+  padding: 0 52px;
+}
+#sn-layout .sn-serach .search-box > a {
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 52px;
+  color: transparent;
+  line-height: 999rem;
+  overflow: hidden;
+}
+#sn-layout .sn-serach .search-box .category {
+  left: 0;
+  background: url(../img/icon_category.png) center / auto 80% no-repeat;
+}
+#sn-layout .sn-serach .search-box .my-cart {
+  right: 0;
+  background: url(../img/icon_cart.png) center / auto 80% no-repeat;
+}
+#sn-layout .sn-serach .search-box .search-form {
+  position: relative;
+  margin-top: 9px;
+  height: 34px;
+  background: #fcd76b;
+  border-radius: 5px;
+  padding-left: 24px;
+  padding-right: 10px;
+}
+#sn-layout .sn-serach .search-box .search-form::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 9px;
+  width: 16px;
+  height: 16px;
+  background: url("../img/icon_search.png") no-repeat center / 16px 16px;
+}
+#sn-layout .sn-serach .search-box .search-form input {
+  width: 100%;
+  height: 34px;
+  padding-left: 10px;
+  background: none;
+}
+#sn-layout .sn-main .slide {
+  width: 100%;
+  overflow: hidden;
+}
+#sn-layout .sn-main .slide .slide-img {
+  width: 800%;
+  display: flex;
+}
+#sn-layout .sn-main .slide .slide-img li {
+  position: relative;
+  width: 12.5%;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sn-layout .sn-main .slide .slide-img li::before {
+  position: absolute;
+  content: "图片加载中...";
+  color: #999;
+  text-align: center;
+}
+#sn-layout .sn-main .slide .slide-img li a {
+  position: relative;
+  z-index: 3;
+  display: block;
+  height: 0;
+  /**使用内底边距 , 撑开盒子的高度 , 比例 = 高度  /  宽度  * 100% */
+  padding-bottom: 42.6667%;
+}
+#sn-layout .sn-main .sn-ad {
+  padding: 10px 0;
+  background: #fff;
+}
+#sn-layout .sn-main .sn-ad a {
+  display: block;
+  height: 0;
+  padding-bottom: 26.57%;
+}
+#sn-layout .sn-main nav {
+  background: #fff;
+}
+#sn-layout .sn-main nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#sn-layout .sn-main nav ul li {
+  width: 20%;
+  text-align: center;
+  margin: 0.08rem 0;
+}
+#sn-layout .sn-main nav ul li a img {
+  width: 0.48rem;
+  height: 0.48rem;
+  margin: 0 auto;
+}
+#sn-layout .sn-main .swipe-container {
+  height: 1rem;
+  overflow: hidden;
+}
+#sn-layout .sn-main .swipe-container .swipe {
+  overflow-x: scroll;
+  height: 1.3rem;
+  /**提升在移动端设备的 滚动 回弹效果 , 可以使滚动或者滑动效果更为流畅 ,更接近于原生效果*/
+  -webkit-overflow-scrolling: touch;
+}
+#sn-layout .sn-main .swipe-container .swipe .swipe-wrap {
+  display: flex;
+  width: 26rem;
+  padding-bottom: 20px;
+  /* 开启硬件加速*/
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 0.35s;
+}
+#sn-layout .sn-main .swipe-container .swipe .swipe-wrap .item {
+  width: 1.2rem;
+  height: 1rem;
+  text-align: center;
+  background: #2aabd2;
+  font-size: 0.2rem;
+  color: #fff;
+  line-height: 1rem;
+  margin-right: 0.1rem;
+}
+#sn-layout .sn-main .img-box .img-box-top {
+  width: 100%;
+  height: 1.2rem;
+  background: url("../img/quan01.jpg") no-repeat center / 3.75rem 1.2rem;
+}
+#sn-layout .tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 640px;
+  transform: translateX(-50%);
+  height: 54px;
+  background: #fff;
+  box-shadow: 0 0px 5px #999;
+}
+#sn-layout .tabbar .nav {
+  display: flex;
+}
+#sn-layout .tabbar .nav li {
+  width: 20%;
+  text-align: center;
+}
+#sn-layout .tabbar .nav li a img {
+  margin: 2px auto;
+  width: 30px;
+  height: 30px;
+}
+/*# sourceMappingURL=index.css.map */

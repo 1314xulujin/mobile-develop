@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    font-size: 12px;
+}
+button:focus{
+    outline: none;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar{
+    position: relative;
+    z-index: 999;
+    height: 50px;
+    line-height: 50px; 
+    background-color: #000;  
+    min-width: 320px;
+}
+
+.navbar .nav{
+    display: flex;
+}
+.navbar li{
+    width: 12.5%;
+    text-align: center;
+}
+.navbar li a{
+    color: #fff;
+}
+.navbar-header{
+    position: absolute;
+    z-index: 1000;
+    right: 15px;
+    line-height: 1;
+}
+
+.navbar-toggle{
+    width: 36px;
+    border: none;
+    background: none;
+    margin-top: 3px;
+    display: none;
+}
+
+.navbar-toggle .icon-bar{
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    margin-top:7px;
+    background-color: #ccc;
+}
+
+#mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+    display: none;
+    transition: all 0.8s 0.6s;
+}
+
+.navbar.open #mask{
+    display: block;
+}
+
+.navbar.open .navbar-toggle .icon-bar{
+    background: #fff;
+    transition: all 0.5s;
+}
+
+.navbar.open .navbar-toggle .icon-bar:nth-child(1){
+    transform-origin: 6px 2px;
+    transform: rotate(45deg);
+}
+.navbar.open .navbar-toggle .icon-bar:nth-child(2){
+    visibility: hidden;    
+    transition: none;
+}
+.navbar.open .navbar-toggle .icon-bar:nth-child(3){
+    transform-origin: -1px -1px;
+    transform: rotate(-45deg);
+}
+.navbar .navbar-collapse{
+    position: relative;
+    z-index: 1000;
+}
+
+/**媒体查询*/
+/**当屏幕在768px以下就显示汉堡按钮 , 导航侧栏显示*/
+@media (max-width:768px){
+    .navbar{
+        background: none;
+    }
+    .navbar .navbar-toggle{
+        display: block;
+    }
+    .navbar .navbar-collapse{
+        position: fixed;
+        z-index: 1000;
+        top:0;
+        left: -100%;
+        bottom: 0;
+        overflow-y: auto;
+        background-color: #000;
+        width: 30%;
+        max-width: 156px;
+        transition: all 0.5s;
+    }
+    .navbar.open .navbar-collapse{
+        left: 0;
+    }
+    .navbar .nav{
+        flex-direction: column;
+    }
+
+    .navbar li{
+        width: 100%;
+        text-align: left;
+        text-indent: 2em;
+    }
+   
+}
+
+@media (min-width:1200px){
+    .container{
+        width: 1200px;
+    }
+}

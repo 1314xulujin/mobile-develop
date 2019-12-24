@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+            使用弹性盒子布局:
+                1.容器(6个属性)
+
+                2.元素(项目)(6个属性)
+        */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 1200px;
+            height: 700px;
+            border: 1px solid red;
+            margin: 50px auto;
+            /*使用弹性盒子布局*/
+            display: flex;
+
+            /*1. flex-direction 设置主轴的方向(排列方式) :
+             row(默认,从左往右) /
+             row-reverse (倒序的水平 从右往左) /
+             column (从上往下)  /
+             column-reverse (从下往上)
+
+            */
+            flex-direction: row;
+
+            /*2.flex-wrap 设置项目元素是否排在一条线上 :
+            nowrap (默认,不换行)
+            wrap 换行(从上往下)
+            wrap-reverse (从下往上)
+            */
+            flex-wrap: nowrap;
+
+            /*3.flex-flow 相当于前面两个属性的简写形式:*/
+            flex-flow: row nowrap;
+
+            /*4.justify-content 设置元素在主轴方向的对齐方式 (水平对齐):
+            flex-start (默认值) 主轴的开始位置对齐 = > 左对齐
+            flex-end 主轴结束位置对齐 => 右对齐
+            center 主轴居中  = > 水平居中
+            space-between 两端对齐后每个元素间平分剩余空间
+            space-around 每个元素左右两侧都会参与分配剩余空间 => 间隔环绕在元素两侧
+            */
+            justify-content: flex-start;
+
+            /*5.align-items 设置元素在交叉轴上对齐方式(垂直对齐):
+            flex-start(默认值) 从交叉轴的起点对齐
+            flex-end 从交叉轴的结束位置对齐
+            baseline 以元素第一行文字的基线对齐
+            stretch 拉伸 , 当元素的高度没有设置 或者设置为auto时生效
+            */
+            align-items: stretch;
+
+            /*6.align-content 设置多个主轴对齐方式
+                flex-start 主轴线以交叉轴的起点对齐 = > 顶部对齐
+                flex-end 主轴线以交叉轴的结束位置对齐 = > 底部对齐
+                center 居中
+                space-between 两端对齐 ,中间平分剩余的高度
+                space-around 每条主轴上下平分剩余的高度
+
+            */
+            align-content: space-around;
+        }
+        .container div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            color: #fff;
+            text-align: center;
+            font-size: 50px;
+            border:1px solid #ccc;
+        }
+
+        .container div:nth-child(1){
+            font-size: 100px;
+            /*1. order 设置项目排序方式: 数字越小越靠前, 默认为 0*/
+            order: 2;
+            /*2.flex-grow 设置元素的成长比例 = > 放大比例 , 默认为0 ,不放大*/
+            flex-grow: 1;
+
+            /*3.flex-shrink 设置元素缩小比例 , 默认 为 1 */
+            flex-shrink: 1;
+
+            /*4.在分配剩余空间之前 ,设置宽度 (相当于在分蛋糕之前 ,自己偷偷的先吃了一口)*/
+            flex-basis: 250px;
+
+            /*5.flex 属性 相当于 2 3 4 简写*/
+
+            /*6.align-self 设置每个元素 ,自己的对齐(交叉轴)方式 ,不一定安装一起对齐方式对齐
+                auto  默认值, 与容器设置的对齐方式 一样
+                flex-end 交叉轴的结束位置对齐
+            */
+            align-self:flex-end;
+        }
+        .container div:nth-child(2){
+            font-size: 30px;
+            order: 4;
+            flex-grow: 1;
+            align-self: center;
+        }
+        .container div:nth-child(3){
+            font-size: 20px;
+            order: 3;
+            flex-shrink: 2;
+        }
+        .container div:nth-child(4){
+            font-size: 80px;
+            order: 0;
+            flex-grow: 0;
+            height: auto;
+            align-self: stretch;
+        }
+        .container div:nth-child(5){
+            font-size: 60px;
+            order: 1;
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <!--<div>1</div>-->
+        <!--<div>2</div>-->
+        <!--<div>3</div>-->
+        <!--<div>4</div>-->
+        <!--<div>5</div>-->
+    </div>
+</body>
+</html>
